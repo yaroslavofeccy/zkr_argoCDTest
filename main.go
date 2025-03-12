@@ -25,4 +25,6 @@ func main() {
 
 	fmt.Println("Waiting")
 	fmt.Println("Polling!!!")
+
+	poolMSG(msg)
 }

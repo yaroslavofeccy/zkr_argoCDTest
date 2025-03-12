@@ -4,16 +4,18 @@ metadata:
   name: mainapp
   namespace: argocd
 spec:
-  project: default
+  destination:
+    namespace: default
+    server: https://kubernetes.default.svc
   source:
-    repoURL: https://github.com/yaroslavofeccy.git
     path: k8s/mainappChart
+    repoURL: https://github.com/yaroslavofeccy/zkr_argoCDTest.git
+    targetRevision: main
     helm:
       valueFiles:
-        - values.yaml 
-  destination:
-    server: https://kubernetes.default.svc
-    namespace: default
+        - values.yaml
+  sources: []
+  project: default
   syncPolicy:
     automated:
       prune: true
