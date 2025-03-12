@@ -1,4 +1,4 @@
 replicaCount: 2
 
 containerPorts: 80
-imageVersion: latest
+imageVersion: "latest"
