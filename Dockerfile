@@ -2,7 +2,7 @@ FROM golang:1.24 AS builder
 
 WORKDIR /usr/src/maindir
 
-COPY go,mod ./
+COPY go.mod ./
 RUN go mod download
 
 COPY main.go .
