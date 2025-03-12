@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: {{ .Release.name }}-deployment
+  name: {{ .Release.Name }}-deployment
   labels:
     app: mainapp
 
@@ -9,16 +9,16 @@ spec:
   replicas: {{ .Values.replicaCount }}
   selector:
     matchLabels:
-      app: {{ .Release.name }}
+      app: {{ .Release.Name }}
 
   template:
     metadata:
       labels:
-        app: {{ .Release.name }}
+        app: {{ .Release.Name }}
     
     spec:
       containers:
-      - name: {{ .Release.name }}
+      - name: {{ .Release.Name }}
         image: yaroslavoffsec/zkr_test:{{ .Values.imageVersion }}
         ports:
         - containerPort: {{ .Values.containerPorts }}
